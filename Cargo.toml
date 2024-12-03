@@ -1,0 +1,24 @@
+[package]
+name = "katharsis"
+version = "1.0.0"
+edition = "2021"
+description = "CLI tool for generating RSS feeds."
+
+[lints.clippy]
+pedantic = "warn"
+
+[dependencies]
+anyhow = "1.0.93"
+chrono = "0.4.38"
+clap = { version = "4.5.21", features = ["derive", "env"] }
+glob = "0.3.1"
+inquire = "0.7.5"
+rss = "2.0.11"
+scraper = "0.21.0"
+serde = { version = "1.0.215", features = ["derive"] }
+tempfile = "3.14.0"
+thiserror = "2.0.3"
+tokio = { version = "1.41.1", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
+tokio-test = "0.4.4"
+toml = "0.8.19"
+url = { version = "2.5.4", features = ["serde"] }

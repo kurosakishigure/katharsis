@@ -1,0 +1,21 @@
+# For more usage instructions, please refer to https://github.com/kurosakishigure/katharsis/USE.md
+
+[rss]
+title = "Your Website Title"
+description = "Your Website Description"
+site_url = "https://example.com"
+image = "favicon.png"
+copyright = "© Year Your Name"
+language = "en"
+output = "rss.xml"
+
+[article]
+title = "h1"
+description = "[data-description]"
+input = "articles/*.html"
+author = { name = "Your Name", email = "Your Email" }
+link = "articles"
+content = "[data-content]"
+date = "time"
+image = "articles/**/image.png"
+sort = true

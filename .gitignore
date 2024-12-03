@@ -1,0 +1,36 @@
+# You can use `.git/info/exclude` to configure your local ignore list.
+
+## File system
+.DS_Store
+desktop.ini
+
+## Editor
+*.swp
+*.swo
+Session.vim
+.idea
+*.iml
+.vscode
+.project
+.vim/
+.helix/
+.zed/
+.favorites.json
+.settings/
+.vs/
+
+## Tool
+.cargo
+
+## Build
+/target
+/katharsis.config.toml
+/rss.xml
+
+## Temporary files
+*~
+\#*
+\#*\#
+.#*
+
+# Before adding new lines, see the comment at the top.

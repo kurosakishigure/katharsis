@@ -1,0 +1,21 @@
+# For more usage instructions, please refer to https://github.com/kurosakishigure/katharsis/USE.md
+
+[rss]
+title = "The React Framework for the Web"
+description = "Used by some of the world's largest companies, Next.js enables you to create high-quality web applications with the power of React components."
+site_url = "https://nextjs.org"
+image = "favicon.png"
+copyright = "© 2024 Vercel Inc"
+language = "en"
+output = "[temp]"
+
+[article]
+title = "h1"
+description = "[data-mdx-description]"
+input = "examples/nextjs/.next/server/app/articles/*.html"
+author = { name = "Vercel Inc", email = "nextjs@vercel.com" }
+link = "articles"
+content = "[data-mdx-content]"
+date = "time"
+image = "examples/nextjs/app/articles/**/opengraph-image.png"
+sort = true
