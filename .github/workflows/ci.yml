@@ -16,7 +16,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Build
+      - name: fmt
+        run: cargo fmt --verbose
+      - name: clippy
+        run: cargo clippy --verbose
+      - name: build
         run: cargo build --verbose
-      - name: Run tests
+      - name: test
         run: cargo test --verbose
