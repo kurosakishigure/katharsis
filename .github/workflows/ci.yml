@@ -6,27 +6,9 @@ on:
   pull_request:
     branches: [ "canary" ]
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    #    if: github.event_name == 'pull_request'
-    steps:
-      - uses: actions/checkout@v4
-      - name: fmt
-        run: cargo fmt --check --verbose
-      - name: clippy
-        run: cargo clippy -- -D warnings --verbose
-      - name: build
-        run: cargo build --verbose
-      - name: test
-        run: cargo test --verbose
-
-  release:
-    name: Release Build and Publish
-    #    if: github.event_name == 'push'
+  unit_tests:
+    name: Unit tests
     runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
@@ -56,18 +38,18 @@ jobs:
             target: aarch64-unknown-linux-gnu
             use-cross: true
     steps:
-      - uses: actions/checkout@v4
-      - name: Add Cross Compilation Targets
-        run: |
-          rustup target add ${{ matrix.job.target }}
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.job.target }}
       - name: Install cross
         if: matrix.job.use-cross
         uses: taiki-e/install-action@v2
         with:
           tool: cross
-      - name: Build Release Binary
-        run: cargo build --release --target ${{ matrix.job.target }}
-      - name: test
+      - name: Unit tests
         shell: bash
         run: |
           if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
@@ -75,17 +57,76 @@ jobs:
           else
             cargo test --target ${{ matrix.job.target }} --verbose -- --nocapture
           fi
-      - name: Archive Binary
-        run: |
-          mkdir -p dist
-          if [[ "${{ matrix.job.os }}" == "windows-latest" ]]; then
-            cp target/${{ matrix.job.target }}/release/katharsis.exe dist/katharsis-${{ matrix.job.target }}.exe
-          else
-            cp target/${{ matrix.job.target }}/release/katharsis dist/katharsis-${{ matrix.job.target }}
-          fi
-#      - name: Upload Binary to GitHub Releases
-#        uses: softprops/action-gh-release@v1
+
+  integration_tests:
+    name: Integration tests
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ macos-latest, ubuntu-latest ]
+        include:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build for release
+        run: cargo build --target ${{ matrix.target }} --release
+#      - name: End to end tests
+#        run: |
+#          DELTA_BIN=target/${{ matrix.target }}/release/delta
+#          ./tests/test_raw_output_matches_git_on_full_repo_history $DELTA_BIN
+#          ./tests/test_deprecated_options $DELTA_BIN > /dev/null
+      - name: Run executable
+        run: cargo run --release --target ${{ matrix.target }} -- < /dev/null
+
+  rustfmt:
+    name: Rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt
+      - name: Check formatting
+        run: cargo fmt --all --check
+
+  clippy:
+    name: Clippy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy
+      - name: Clippy Check
+        run: cargo clippy -- -D warnings
+
+  coverage:
+    name: Code coverage
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install stable toolchain
+        uses: dtolnay/rust-toolchain@stable
+      - name: Install cargo-tarpaulin
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cargo-tarpaulin
+      - name: Run cargo-tarpaulin
+        run: cargo tarpaulin --ignore-tests --out Lcov --output-dir target/tarpaulin
+#      - name: Upload to Coveralls
+#        if: ${{ github.event_name == 'push' }}
+#        uses: coverallsapp/github-action@master
 #        with:
-#          files: dist/*
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          github-token: ${{ secrets.GITHUB_TOKEN }}
+#          path-to-lcov: './target/tarpaulin/lcov.info'
