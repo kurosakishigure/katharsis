@@ -57,9 +57,9 @@ jobs:
             use-cross: true
     steps:
       - uses: actions/checkout@v4
-      #      - name: Add Cross Compilation Targets
-      #        run: |
-      #          rustup target add ${{ matrix.job.target }}
+      - name: Add Cross Compilation Targets
+        run: |
+          rustup target add ${{ matrix.job.target }}
       - name: Install cross
         if: matrix.job.use-cross
         uses: taiki-e/install-action@v2
