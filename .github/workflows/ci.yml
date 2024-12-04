@@ -12,6 +12,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    #    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
       - name: fmt
@@ -56,11 +57,24 @@ jobs:
             use-cross: true
     steps:
       - uses: actions/checkout@v4
-      - name: Add Cross Compilation Targets
-        run: |
-          rustup target add ${{ matrix.job.target }}
+      #      - name: Add Cross Compilation Targets
+      #        run: |
+      #          rustup target add ${{ matrix.job.target }}
+      - name: Install cross
+        if: matrix.job.use-cross
+        uses: taiki-e/install-action@v2
+        with:
+          tool: cross
       - name: Build Release Binary
         run: cargo build --release --target ${{ matrix.job.target }}
+      - name: test
+        shell: bash
+        run: |
+          if [[ "${{ matrix.job.use-cross }}" == "true" ]]; then
+            cross test --target ${{ matrix.job.target }} --verbose -- --nocapture
+          else
+            cargo test --target ${{ matrix.job.target }} --verbose -- --nocapture
+          fi
       - name: Archive Binary
         run: |
           mkdir -p dist
