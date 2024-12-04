@@ -29,21 +29,36 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest, windows-latest, macos-13 ]
-        target:
-          - aarch64-apple-darwin
-          - x86_64-apple-darwin
-          - x86_64-pc-windows-msvc
-          - x86_64-unknown-linux-gnu
-          - x86_64-unknown-linux-musl
-          - i686-unknown-linux-gnu
-          - arm-unknown-linux-gnueabihf
-          - aarch64-unknown-linux-gnu
+        job:
+          - os: macos-latest
+            target: aarch64-apple-darwin
+            use-cross: false
+          - os: macos-13
+            target: x86_64-apple-darwin
+            use-cross: false
+          - os: windows-latest
+            target: x86_64-pc-windows-msvc
+            use-cross: false
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-gnu
+            use-cross: false
+          - os: ubuntu-latest
+            target: x86_64-unknown-linux-musl
+            use-cross: true
+          - os: ubuntu-latest
+            target: i686-unknown-linux-gnu
+            use-cross: true
+          - os: ubuntu-latest
+            target: arm-unknown-linux-gnueabihf
+            use-cross: true
+          - os: ubuntu-latest
+            target: aarch64-unknown-linux-gnu
+            use-cross: true
     steps:
       - uses: actions/checkout@v4
-      - name: Add Cross Compilation Targets
-        run: |
-          rustup target add ${{ matrix.target }}
+      #      - name: Add Cross Compilation Targets
+      #        run: |
+      #          rustup target add ${{ matrix.target }}
       - name: Build Release Binary
         run: cargo build --release --target ${{ matrix.target }}
       - name: Archive Binary
