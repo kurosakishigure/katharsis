@@ -58,16 +58,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Add Cross Compilation Targets
         run: |
-          rustup target add ${{ matrix.target }}
+          rustup target add ${{ matrix.job.target }}
       - name: Build Release Binary
-        run: cargo build --release --target ${{ matrix.target }}
+        run: cargo build --release --target ${{ matrix.job.target }}
       - name: Archive Binary
         run: |
           mkdir -p dist
-          if [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            cp target/${{ matrix.target }}/release/katharsis.exe dist/katharsis-${{ matrix.target }}.exe
+          if [[ "${{ matrix.job.os }}" == "windows-latest" ]]; then
+            cp target/${{ matrix.job.target }}/release/katharsis.exe dist/katharsis-${{ matrix.job.target }}.exe
           else
-            cp target/${{ matrix.target }}/release/katharsis dist/katharsis-${{ matrix.target }}
+            cp target/${{ matrix.job.target }}/release/katharsis dist/katharsis-${{ matrix.job.target }}
           fi
 #      - name: Upload Binary to GitHub Releases
 #        uses: softprops/action-gh-release@v1
