@@ -27,7 +27,7 @@ jobs:
   release:
     name: Release Build and Publish
     #    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.job.os }}
     strategy:
       matrix:
         job:
