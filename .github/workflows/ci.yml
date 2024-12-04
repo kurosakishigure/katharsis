@@ -56,9 +56,9 @@ jobs:
             use-cross: true
     steps:
       - uses: actions/checkout@v4
-      #      - name: Add Cross Compilation Targets
-      #        run: |
-      #          rustup target add ${{ matrix.target }}
+      - name: Add Cross Compilation Targets
+        run: |
+          rustup target add ${{ matrix.target }}
       - name: Build Release Binary
         run: cargo build --release --target ${{ matrix.target }}
       - name: Archive Binary
