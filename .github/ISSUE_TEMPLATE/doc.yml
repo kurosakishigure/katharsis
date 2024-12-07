@@ -11,7 +11,7 @@ body:
     attributes:
       label: Page Link
       description: The URL of the page where the document is located.
-      placeholder: ex. https://github.com/kurosakishigure/katharsis/blob/canary/USE.md
+      placeholder: ex. https://example.com/docs/USE.md
   - type: textarea
     id: documentation_issue
     attributes:
