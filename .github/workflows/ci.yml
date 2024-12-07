@@ -77,7 +77,9 @@ jobs:
       - name: Build for release
         run: cargo build --target ${{ matrix.target }} --release
       - name: Run executable
-        run: cargo run --release --target ${{ matrix.target }} init -- < /dev/null
+        run: |
+          cargo run --release --target ${{ matrix.target }} init -- < /dev/null
+          cargo run --release --target ${{ matrix.target }} -- < /dev/null
 
   rustfmt:
     name: Rustfmt
