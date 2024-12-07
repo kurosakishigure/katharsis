@@ -82,11 +82,3 @@ Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis 
    ```bash
    gh pr create
    ```
-
-## Security
-
-Once the issue has been identified, we will disclose the relevant information as soon as possible.
-
-Here are the project’s key personnel and their reporting methods:
-
-- Shigure Kurosaki - [security.txt](https://hqsy.net/.well-known/security.txt)
