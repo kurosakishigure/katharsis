@@ -1,0 +1,22 @@
+name: Propose an improvement
+description: New feature or request.
+labels: [ 'enhancement' ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to Katharsis, please go ahead and describe your proposal!
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: What problem does this feature solve?
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: How do we implement it?
+    validations:
+      required: false

@@ -1,0 +1,45 @@
+name: Report an issue
+description: Report a Katharsis issue.
+labels: [ 'bug' ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: katharsis_version
+    attributes:
+      label: Katharsis Version
+      description: What is the version number of your Katharsis?
+      placeholder: ex. 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: system_version
+    attributes:
+      label: System Version
+      description: What is your system version?
+      placeholder: ex. macOS 15.1.1
+    validations:
+      required: true
+  - type: textarea
+    id: expected_behavior
+    attributes:
+      label: Expected Behavior
+      description: What were you expecting to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual_behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Additional Information
+      description: What additional information do you need to provide?
+    validations:
+      required: false
