@@ -84,7 +84,7 @@ jobs:
         run: ./etc/cd/before_deploy.sh
 
       - name: Releasing assets
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             katharsis-*-${{ matrix.job.target }}.*
