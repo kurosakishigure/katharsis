@@ -18,7 +18,7 @@ scraper = "0.21.0"
 serde = { version = "1.0.215", features = ["derive"] }
 tempfile = "3.14.0"
 thiserror = "2.0.4"
-tokio = { version = "1.41.1", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
+tokio = { version = "1.42.0", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
 tokio-test = "0.4.4"
 toml = "0.8.19"
 url = { version = "2.5.4", features = ["serde"] }
