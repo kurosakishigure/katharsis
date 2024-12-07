@@ -6,6 +6,12 @@ body:
     attributes:
       value: |
         Thank you for helping us update our docs!
+  - type: input
+    id: page_link
+    attributes:
+      label: Page Link
+      description: The URL of the page where the document is located.
+      placeholder: ex. https://github.com/kurosakishigure/katharsis/blob/canary/USE.md
   - type: textarea
     id: documentation_issue
     attributes:
