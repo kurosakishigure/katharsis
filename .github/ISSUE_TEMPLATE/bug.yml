@@ -23,6 +23,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: to_reproduce
+    attributes:
+      label: To Reproduce
+      description: A step-by-step description of how to reproduce the issue, based on the linked reproduction.
+    validations:
+      required: true
+  - type: textarea
     id: expected_behavior
     attributes:
       label: Expected Behavior
