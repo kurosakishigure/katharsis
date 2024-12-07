@@ -22,6 +22,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 We firmly believe that no software is completely secure, and we welcome contributions from security researchers.
 
+See [SECURITY.md](SECURITY.md).
+
 ## License
 
 Katharsis is primarily distributed under the terms of the MIT License. For more details, please refer to the [LICENSE](LICENSE).
