@@ -7,6 +7,13 @@ body:
       value: |
         Thanks for contributing to Katharsis, please go ahead and describe your proposal!
   - type: textarea
+    id: feature_description
+    attributes:
+      label: Feature Description
+      description: The specific details of the feature.
+    validations:
+      required: true
+  - type: textarea
     id: rationale
     attributes:
       label: Rationale
