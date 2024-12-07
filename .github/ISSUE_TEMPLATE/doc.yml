@@ -1,0 +1,22 @@
+name: Report an issue with an documentation
+description: Report an issue with one of our Katharsis documentation.
+labels: [ 'documentation' ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us update our docs!
+  - type: textarea
+    id: documentation_issue
+    attributes:
+      label: What is the documentation issue?
+      description: Improvements or additions to documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: any_context
+    attributes:
+      label: Is there any context that might help us understand?
+      description: A clear description of any added context that might help us understand.
+    validations:
+      required: false
