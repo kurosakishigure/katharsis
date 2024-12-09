@@ -9,7 +9,7 @@ pedantic = "warn"
 
 [dependencies]
 anyhow = "1.0.94"
-chrono = "0.4.38"
+chrono = "0.4.39"
 clap = { version = "4.5.23", features = ["derive", "env"] }
 glob = "0.3.1"
 inquire = "0.7.5"
