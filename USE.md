@@ -4,7 +4,23 @@
 
 ### Linux and macOS
 
-First, download the appropriate binary from the [Releases](https://github.com/kurosakishigure/katharsis/releases) page.
+First, download the appropriate binary from the [Releases](https://github.com/kurosakishigure/katharsis/releases/latest) page.
+
+> You can find the platform comparison table in the [Platform Support](https://doc.rust-lang.org/rustc/platform-support.html) section.
+
+If you're using a Debian-based system, you can directly install the .deb file from the download directory using apt:
+
+```bash
+sudo apt install katharsis.deb
+```
+
+Otherwise, you'll need to follow the step-by-step instructions below to install Katharsis.
+
+Run the following command to extract the downloaded file:
+
+```bash
+tar -xzf ~/your/download/path/katharsis.tar.gz
+```
 
 Next, execute the following command in your home directory to create the necessary folders:
 
@@ -15,7 +31,7 @@ mkdir -p Formulae/bin
 Move the downloaded binary to ~/Formulae/bin:
 
 ```bash
-mv ~/your/download/path/katharsis ~/Formulae/bin/katharsis
+mv ~/your/extract/path/katharsis ~/Formulae/bin/katharsis
 ```
 
 Modify your .zshrc or .bashrc file by adding the following configuration:
@@ -45,6 +61,24 @@ source .zshrc
 source .bashrc
 ```
 
+## Example
+
+> You can refer to our [Examples](https://github.com/kurosakishigure/katharsis/tree/canary/examples).
+
+Run the following command to generate a `katharsis.config.toml` file in the current directory:
+
+```bash
+katharsis init
+```
+
+Run the following command to create a default `rss.xml`:
+
+```bash
+katharsis
+```
+
+For a detailed explanation of the fields in the `katharsis.config.toml` file, refer to the Overview section below.
+
 ## Command Overview
 
 | Command | Description                                                      |
@@ -59,6 +93,8 @@ source .bashrc
 | -c        | Specifies a katharsis.config.toml file as the configuration. |
 | -h        | Displays help information.                                   |
 | -V        | Displays the current version of Katharsis.                   |
+
+> If you do not specify the `-c` parameter, the `katharsis.config.toml` file in the current directory will be used by default.
 
 ## Explanation of katharsis.config.toml Fields
 
