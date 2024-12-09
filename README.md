@@ -8,8 +8,8 @@
   <a href="https://github.com/kurosakishigure/katharsis/actions/workflows/cd.yml">
     <img src="https://github.com/kurosakishigure/katharsis/workflows/CD/badge.svg" alt="CD">
   </a>
-  <a href="https://coveralls.io/github/kurosakishigure/katharsis?branch=refs/tags/1.0.0-canary.3">
-    <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/1.0.0-canary.3" alt="Coverage Status">
+  <a href="https://coveralls.io/github/kurosakishigure/katharsis?branch=refs/tags/1.0.0-canary.4">
+    <img src="https://coveralls.io/repos/github/kurosakishigure/katharsis/badge.svg?branch=refs/tags/1.0.0-canary.4" alt="Coverage Status">
   </a>
 </p>
 
