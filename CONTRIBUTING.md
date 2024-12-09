@@ -54,6 +54,39 @@ Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis 
 - Install Rust and Cargo via [rustup](https://rustup.rs).
 - Install the [GitHub CLI](https://github.com/cli/cli#installation).
 
+### Branch Naming
+
+| Type          | Prefix |
+|---------------|--------|
+| documentation | doc    |
+| enhancement   | feat   |
+| bug           | fix    |
+| chore         | chore  |
+
+Format: `<branch prefix>/<branch content>`
+
+> The `<branch content>` should be as short as possible and closely aligned with the issue topic.
+
+Example: `fix/dependabot`
+
+### Commit Message Naming
+
+Format: `<branch prefix>: <message content>`
+
+> The `<message content>` should be as short as possible and closely related to the content of the commit.
+
+Example: `fix: dependabot.yml contained invalid details`
+
+### PR Naming
+
+Format: `<branch prefix>: <title content>`
+
+> The `<title content>` should be as short as possible and closely aligned with the issue topic.
+
+Example: `fix: dependabot.yml contained invalid details`
+
+> If your PR contains only one commit, you can keep the `<title content>` and `<message content>` the same.
+
 ### Local Development
 
 1. Clone the Katharsis repository (download only recent commits for faster clone):
@@ -73,13 +106,21 @@ Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis 
    cargo test
    ```
 5. Start making changes to your code.
-   _Note: Don’t forget to run the unit tests once before committing to the branch._
-6. When your changes are finished, commit them to the branch:
+6. Run rustfmt and Clippy.
+   ```bash
+   cargo fmt --all --check
+   cargo clippy -- -D warnings
+   ```
+7. Run unit tests:
+   ```bash
+   cargo test
+   ```
+8. When your changes are finished, commit them to the branch:
    ```bash
    git add .
    git commit -m "DESCRIBE_YOUR_CHANGES_HERE"
    ```
-7. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
+9. To open a pull request you can use the GitHub CLI which automatically forks and sets up a remote branch. Follow the prompts when running:
    ```bash
    gh pr create
    ```
