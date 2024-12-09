@@ -1,0 +1,16 @@
+NOTICE
+
+This project includes third-party code under the following licenses:
+
+- MIT License:
+  License: licenses/delta/LICENSE
+  Repository: https://github.com/dandavison/delta
+  Copyright 2020 Dan Davison
+- MIT License:
+  License: licenses/nextjs/license.md
+  Repository: https://github.com/vercel/next.js
+  Copyright (c) 2024 Vercel, Inc.
+- Apache License:
+  License: licenses/sharp/LICENSE
+  Repository: https://github.com/lovell/sharp
+  Copyright 2024 Lovell Fuller

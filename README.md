@@ -39,6 +39,10 @@ See [SECURITY.md](https://github.com/kurosakishigure/katharsis/blob/canary/SECUR
 
 See [FAQ.md](https://github.com/kurosakishigure/katharsis/blob/canary/FAQ.md).
 
+## Notice
+
+See [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/NOTICE).
+
 ## License
 
 Katharsis is primarily distributed under the terms of the MIT License. For more details, please refer to the [LICENSE](https://github.com/kurosakishigure/katharsis/blob/canary/LICENSE).

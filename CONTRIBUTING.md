@@ -4,6 +4,7 @@ Thank you for contributing to [Katharsis](https://github.com/kurosakishigure/kat
 
 > - Before jumping into a PR be sure to search [existing PRs](https://github.com/kurosakishigure/katharsis/pulls) or [issues](https://github.com/kurosakishigure/katharsis/issues) for an open or closed item that relates to your submission.
 > - You need to confirm whether the PR corresponds to an issue. If there isn’t a corresponding issue, please open one before submitting the PR.
+> - If you use someone else's code, you should comply with the terms of its license by including the corresponding LICENSE file in the project's [licenses](https://github.com/kurosakishigure/katharsis/tree/canary/licenses) folder. Additionally, make sure to update the project's [NOTICE](https://github.com/kurosakishigure/katharsis/blob/canary/NOTICE) file with the relevant information. Please be cautious and avoid using code with incompatible licenses.
 
 ## Guidelines
 
@@ -82,3 +83,10 @@ Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis 
    ```bash
    gh pr create
    ```
+
+## Reporting License Issues
+
+As we cannot verify the origin of contributors' code, please submit an [issue](https://github.com/kurosakishigure/katharsis/issues) if our project violates any applicable licenses.
+
+> - To request additional License information, please [Report an issue with the documentation](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=documentation&projects=&template=doc.yml).
+> - To request the removal of specific code, please [Report an issue](https://github.com/kurosakishigure/katharsis/issues/new?assignees=&labels=bug&projects=&template=bug.yml).
