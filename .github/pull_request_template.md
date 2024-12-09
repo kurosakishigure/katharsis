@@ -46,6 +46,9 @@ Please check the following before submitting the PR:
 - [ ] I have added or updated tests to cover my changes (if applicable)
 - [ ] All new and existing tests pass
 - [ ] I have reviewed my code for any potential issues
+- [ ] Link the relevant issue to this PR (if applicable)
+- [ ] Add labels to this PR
+- [ ] I have read and followed the guidelines in `CONTRIBUTING.md`
 
 ## Additional Notes
 
