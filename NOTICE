@@ -14,3 +14,7 @@ This project includes third-party code under the following licenses:
   License: licenses/sharp/LICENSE
   Repository: https://github.com/lovell/sharp
   Copyright 2024 Lovell Fuller
+- Apache License:
+  License: licenses/material-design-icons/LICENSE
+  Repository: https://github.com/google/material-design-icons
+  Copyright (c) 2024 Google, Inc.
