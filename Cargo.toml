@@ -1,6 +1,6 @@
 [package]
 name = "katharsis"
-version = "1.0.0-canary.4"
+version = "1.0.0-canary.5"
 edition = "2021"
 description = "CLI tool for generating RSS feeds."
 
