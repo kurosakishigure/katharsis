@@ -216,10 +216,11 @@ pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
             });
         }
 
-        println!("- create: {}", rss.output.to_string_lossy());
         if rss.output.as_os_str().is_empty() {
             Ok(channel_builder(rss, items))
         } else {
+            println!("- create: {}", rss.output.to_string_lossy());
+
             let mut rss_file = File::create(&rss.output).await?;
             let channel = channel_builder(rss, items);
 
