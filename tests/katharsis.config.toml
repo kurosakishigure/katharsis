@@ -7,7 +7,7 @@ site_url = "https://nextjs.org"
 image = "favicon.png"
 copyright = "© 2024 Vercel Inc"
 language = "en"
-output = "[temp]"
+output = ""
 
 [article]
 title = "h1"

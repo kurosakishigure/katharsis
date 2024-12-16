@@ -16,9 +16,11 @@ inquire = "0.7.5"
 rss = "2.0.11"
 scraper = "0.22.0"
 serde = { version = "1.0.216", features = ["derive"] }
-tempfile = "3.14.0"
 thiserror = "2.0.6"
 tokio = { version = "1.42.0", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
-tokio-test = "0.4.4"
 toml = "0.8.19"
 url = { version = "2.5.4", features = ["serde"] }
+
+[dev-dependencies]
+tokio-test = "0.4.4"
+tempfile = "3.14.0"
