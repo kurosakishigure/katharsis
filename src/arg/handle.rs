@@ -217,17 +217,16 @@ pub async fn builder(config_path: &PathBuf) -> Result<Channel, Errors> {
         }
 
         println!("- create: {}", rss.output.to_string_lossy());
-        let mut rss_file = {
-            if rss.output == PathBuf::from("[temp]") {
-                File::from_std(tempfile::tempfile()?)
-            } else {
-                File::create(&rss.output).await?
-            }
-        };
-        let channel = channel_builder(rss, items);
-        rss_file.write_all(channel.to_string().as_ref()).await?;
+        if rss.output.as_os_str().is_empty() {
+            Ok(channel_builder(rss, items))
+        } else {
+            let mut rss_file = File::create(&rss.output).await?;
+            let channel = channel_builder(rss, items);
 
-        Ok(channel)
+            rss_file.write_all(channel.to_string().as_ref()).await?;
+
+            Ok(channel)
+        }
     } else {
         eprintln!("- {}", config_path.to_string_lossy());
 
