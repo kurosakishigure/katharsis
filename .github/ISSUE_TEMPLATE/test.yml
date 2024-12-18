@@ -1,4 +1,4 @@
-name: Report an issue with an test
+name: Report a test issue
 description: Add or improve tests.
 labels: [ 'test' ]
 body:

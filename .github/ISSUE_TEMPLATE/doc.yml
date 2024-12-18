@@ -1,5 +1,5 @@
-name: Report an issue with an documentation
-description: Report an issue with one of our Katharsis documentation.
+name: Report a documentation issue
+description: Improvements or additions to documentation.
 labels: [ 'documentation' ]
 body:
   - type: markdown
