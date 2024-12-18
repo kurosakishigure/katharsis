@@ -1,6 +1,6 @@
 ruleDirs:
-- /Users/kurosakishigure/RustroverProjects/katharsis/rules
+  - rules
 testConfigs:
-- testDir: /Users/kurosakishigure/RustroverProjects/katharsis/rule-tests
+  - testDir: rule-tests
 utilDirs:
-- /Users/kurosakishigure/RustroverProjects/katharsis/utils
+  - utils
