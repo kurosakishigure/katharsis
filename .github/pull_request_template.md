@@ -26,6 +26,9 @@ Please delete options that are not relevant:
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Documentation update
+- [ ] Add or improve tests
+- [ ] Add or enhance examples
+- [ ] Miscellaneous tasks
 - [ ] Other (please describe):
 
 ## How Has This Been Tested?

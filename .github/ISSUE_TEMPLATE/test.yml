@@ -1,0 +1,29 @@
+name: Report an issue with an test
+description: Add or improve tests.
+labels: [ 'test' ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us update our test!
+  - type: textarea
+    id: test_description
+    attributes:
+      label: Test Description
+      description: The specific details of the test.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: What problem does this test solve?
+    validations:
+      required: true
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Additional Information
+      description: What additional information do you need to provide?
+    validations:
+      required: false

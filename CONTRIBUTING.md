@@ -61,6 +61,8 @@ Do note that our [Code of Conduct](CODE_OF_CONDUCT.md) applies to all Katharsis 
 | documentation | doc    |
 | enhancement   | feat   |
 | bug           | fix    |
+| example       | ex     |
+| test          | test   |
 | chore         | chore  |
 
 Format: `<branch prefix>/<branch content>`
