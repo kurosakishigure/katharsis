@@ -1,0 +1,29 @@
+name: Report an issue with an example
+description: Add or enhance examples.
+labels: [ 'example' ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping us update our example!
+  - type: textarea
+    id: example_description
+    attributes:
+      label: Example Description
+      description: The specific details of the example.
+    validations:
+      required: true
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Rationale
+      description: What problem does this example solve?
+    validations:
+      required: true
+  - type: textarea
+    id: additional_information
+    attributes:
+      label: Additional Information
+      description: What additional information do you need to provide?
+    validations:
+      required: false
