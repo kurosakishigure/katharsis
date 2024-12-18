@@ -1,5 +1,5 @@
 name: Report a test issue
-description: Add or improve tests.
+description: Add or improve test.
 labels: [ 'test' ]
 body:
   - type: markdown

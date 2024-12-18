@@ -1,5 +1,5 @@
 name: Report a example issue
-description: Add or improve examples.
+description: Add or improve example.
 labels: [ 'example' ]
 body:
   - type: markdown
