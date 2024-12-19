@@ -29,6 +29,7 @@ Please delete options that are not relevant:
 - [ ] Add or improve tests
 - [ ] Add or improve examples
 - [ ] Miscellaneous tasks
+- [ ] Reverts commit
 - [ ] Other (please describe):
 
 ## How Has This Been Tested?
