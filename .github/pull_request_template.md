@@ -27,7 +27,7 @@ Please delete options that are not relevant:
 - [ ] New feature
 - [ ] Documentation update
 - [ ] Add or improve tests
-- [ ] Add or enhance examples
+- [ ] Add or improve examples
 - [ ] Miscellaneous tasks
 - [ ] Other (please describe):
 
