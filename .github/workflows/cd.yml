@@ -41,10 +41,13 @@ jobs:
     steps:
       - name: Installing Rust toolchain
         uses: dtolnay/rust-toolchain@stable
+        id: toolchain
         with:
           targets: ${{ matrix.job.target }}
       - name: Rust cache
         uses: Swatinem/rust-cache@v2
+        with:
+          shared-key: ${{steps.toolchain.outputs.cachekey}}
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Install cross
