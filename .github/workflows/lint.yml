@@ -21,4 +21,4 @@ jobs:
         with:
           persist-credentials: false
       - name: Run Insight
-        uses: arghena/insight@2b2f5097b7d9e1ce56bc8a025d3987df3ff054e0 # v0.1.0-canary.56
+        uses: arghena/insight@27e7353bf6724e32a813c54a739c5cdfd180ff0d # v0.1.0-canary.57
